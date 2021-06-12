@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'GraphikLCGRegular';
+}
+.el-menu, .el-footer {
+    padding: 0 10vw;
+    background-color: #F2F2F2;
+} 
+.el-header {
+    padding: 0;
+    height: 10vh;
+}
+.el-main {
+    padding: 0;
+    height: 80vh;
+}
+.el-footer {
+    height: 10vh !important;
+    font-size: 16px;
+}
+.block {
+    padding: 50px 10vw 0 10vw;
+}
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 38px;
+}
+p {
+    font-size: 14px;
+}
+a {
+    text-decoration: none;
+    color: rgba(8, 5, 12, 1);
+}
+button {
+    width: fit-content;
+    padding: 14px 30px;
+    border: none;
+    background: #F2F2F2;
+    border-radius: 4px;
+}
+button.gray {
+    background: rgba(218, 218, 218, 1);
+}
+.center {
+    display: flex;	
+    justify-content: center;
+}
+button.black {
+    background: rgba(0, 0, 0, 1);
+    color: #ffffff;
+}
+.el-menu-item:hover {
+    background: none !important;
+}
+.el-menu-item.is-active {
+    border-bottom: none !important;
+}
+.home {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000000 !important;
+    padding-left: 0;
+}
+.banner.block {
+    display: flex;
+}
+iframe {
+    overflow: hidden;
+}
+@font-face { 
+    font-family: "GraphikLCGRegular";
+    src: url("./fonts/GraphikLCGRegular.ttf");
+}
