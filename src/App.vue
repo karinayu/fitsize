@@ -31,6 +31,7 @@
   </el-container>
 </template>
 <script>
+  import {FAVORITE_KEY} from './settings.js';
 
 export default {
   name: "App",
@@ -42,6 +43,8 @@ export default {
     },
     // Log the user out
     logout() {
+      localStorage.removeItem(FAVORITE_KEY);
+
       this.$auth.logout({
         returnTo: window.location.origin
       });

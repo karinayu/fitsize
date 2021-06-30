@@ -27,10 +27,12 @@
   </el-main>
 </template>
 <script>
+  import {FAVORITE_KEY} from './../settings.js';
+
 export default {
   name: "Favourite",
   data() {
-    const data = localStorage.getItem('data_key');
+    const data = localStorage.getItem(FAVORITE_KEY);
     return {
       data: JSON.parse(data),
     }
