@@ -8,11 +8,17 @@ var tag = document.createElement('script');
   tag.src = "https://files.clo-set.com/dist/fitting_viewer_iframe_api/0.0.2/closet_fitting_viewer_iframe_api.js";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  
+  tag.onload = () => {
+    function likeHandler(data){
+      localStorage.setItem('data_key', JSON.stringify(data));
+    }
+    console.log(window.ClosetFittingIframeAPI);
+    // eslint-disable-next-line no-undef
+    window.ClosetFittingIframeAPI.addEventListener('changeAvatar', likeHandler);
+    // eslint-disable-next-line no-undef
+    window.ClosetFittingIframeAPI.addEventListener('clickLike', likeHandler);
+  }
 export default {
   name: "Fitting-room",
-  methods: {
-    
-  },
 }
 </script>

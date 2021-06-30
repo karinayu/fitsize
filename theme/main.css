@@ -105,6 +105,9 @@ iframe {
     width: 100px;
     border-radius: 100px;
 }
+.main-banner.block.favourite {
+    display: block;
+}
 @font-face { 
     font-family: "GraphikLCGRegular";
     src: url("./fonts/GraphikLCGRegular.ttf");
