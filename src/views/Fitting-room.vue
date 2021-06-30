@@ -8,7 +8,11 @@ var tag = document.createElement('script');
   tag.src = "https://files.clo-set.com/dist/fitting_viewer_iframe_api/0.0.2/closet_fitting_viewer_iframe_api.js";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  
 export default {
   name: "Fitting-room",
+  methods: {
+    
+  },
 }
 </script>
