@@ -1,12 +1,17 @@
 <template>
     <div class="profile">
         <h4>Данные профиля</h4>
-        <img :src="$auth.user.picture">
-        <h5>{{ $auth.user.name }}</h5>
-        <p>{{ $auth.user.email }}</p>
-        <p>Рост: {{JSON.stringify(data.profile.height, 'не указано', '  ')}} см</p>
+        <el-card class="box-card">
+            <div slot="header" class="clearfix">
+                <img :src="$auth.user.picture">
+                <div>{{ $auth.user.name }}</div>
+                <div>{{ $auth.user.email }}</div>
+                <el-button style="float: right; padding: 3px 0" type="text">Operation button</el-button>
+            </div>
+            <p>Рост: {{JSON.stringify(data.profile.height, 'не указано', '  ')}} см</p>
         <p>Вес: {{JSON.stringify(data.profile.weight, 'не указано', '  ')}} кг</p>
-        <p>Доп инфо: {{JSON.stringify(data.profile, 'не указано', '  ')}}</p>
+        <p>Дополнительная информация:{{JSON.stringify(data.profile, 'не указано', '  ')}}</p>
+        </el-card>
     </div>
 </template>
 <script>
