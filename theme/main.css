@@ -101,9 +101,9 @@ iframe {
     overflow: hidden;
 }
 .main-banner.block.favourite div img{
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
+    height: 70px;
+    width: 70px;
+    border-radius: 70px;
 }
 .main-banner.block.favourite {
     display: block;
