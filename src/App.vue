@@ -5,6 +5,7 @@
             <el-menu-item class="home" index="/">FitSize</el-menu-item>
             <el-menu-item index="/fitting-room">Примерочная</el-menu-item>
             <el-menu-item v-if="$auth.isAuthenticated" index="/favourite">Избранное</el-menu-item>
+            <el-menu-item index="/faq">FAQ</el-menu-item>
             <el-menu-item index="/about">О нас</el-menu-item>
           <el-menu-item>
               <div v-if="!$auth.loading">

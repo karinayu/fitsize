@@ -108,6 +108,9 @@ iframe {
 .main-banner.block.favourite {
     display: block;
 }
+.main-banner.block.faq {
+    display: block;
+}
 @font-face { 
     font-family: "GraphikLCGRegular";
     src: url("./fonts/GraphikLCGRegular.ttf");

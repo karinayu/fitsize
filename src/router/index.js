@@ -18,12 +18,20 @@ const routes = [
   {
     path: '/favourite',
     name: 'Favourite',
-    component: () => import('../views/Favourite.vue')
+    component: () => import('../views/Favourite.vue'),
+    children: [
+      { path: '', component: () => import('../components/Profile.vue') }
+    ]
   },
   {
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue')
+  },
+  {
+    path: '/faq',
+    name: 'Faq',
+    component: () => import('../views/Faq.vue')
   },
 ]
 

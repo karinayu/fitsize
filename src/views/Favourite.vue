@@ -1,41 +1,43 @@
 <template>
   <el-main>
     <div class="main-banner block favourite"> 
-      <div>
-        <img :src="$auth.user.picture">
-        <h4>{{ $auth.user.name }}</h4>
-        <p>{{ $auth.user.email }}</p>
-      </div>
+      <router-view></router-view>
       <el-divider></el-divider>
       <div class="favs">
-        <div v-if="data.value!=false" class="fav-item">
-          <p v-if="JSON.stringify(data.data.sizeIndex, 'Ничего не выбрано', '  ')==0">Выбранный размер: XXS</p>
-          <p v-if="JSON.stringify(data.data.sizeIndex, 'Ничего не выбрано', '  ')==1">Выбранный размер: XS</p>
-          <p v-if="JSON.stringify(data.data.sizeIndex, 'Ничего не выбрано', '  ')==2">Выбранный размер: S</p>
-          <p v-if="JSON.stringify(data.data.sizeIndex, 'Ничего не выбрано', '  ')==3">Выбранный размер: M</p>
-          <p v-if="JSON.stringify(data.data.colorwayIndex, 'Ничего не выбрано', '  ')==0">Выбранный цвет:
-            <img src="../img/0.png" alt='pink'>
+        <div class="fav-item">
+          <p v-if="JSON.stringify(data.sizeIndex, 'Ничего не выбрано', '  ')==0">Выбранный размер: XXS</p>
+          <p v-if="JSON.stringify(data.sizeIndex, 'Ничего не выбрано', '  ')==1">Выбранный размер: XS</p>
+          <p v-if="JSON.stringify(data.sizeIndex, 'Ничего не выбрано', '  ')==2">Выбранный размер: S</p>
+          <p v-if="JSON.stringify(data.sizeIndex, 'Ничего не выбрано', '  ')==3">Выбранный размер: M</p>
+          <p v-if="JSON.stringify(data.sizeIndex, 'Ничего не выбрано', '  ')==4">Выбранный размер: L</p>
+          <p v-if="JSON.stringify(data.sizeIndex, 'Ничего не выбрано', '  ')==5">Выбранный размер: XL</p>
+          <p v-if="JSON.stringify(data.colorwayIndex, 'Не выбрано', '  ')==0">Выбранный цвет:
+            <img src="../img/0.png" alt='beige'/>
           </p>
-          <p v-if="JSON.stringify(data.data.colorwayIndex, 'Ничего не выбрано', '  ')==1">Выбранный цвет:
-            <img src="../img/1.png" style="height: 100px; width:100px">
+          <p v-if="JSON.stringify(data.colorwayIndex, 'Не выбрано', '  ')==1">Выбранный цвет:
+            <img src="../img/1.png" alt='black&white'/>
           </p>
-          <p v-if="JSON.stringify(data.data.colorwayIndex, 'Ничего не выбрано', '  ')==2">Выбранный цвет:
-            <img src="../img/2.png" style="height: 100px; width:100px">
+          <p v-if="JSON.stringify(data.colorwayIndex, 'Не выбрано', '  ')==2">Выбранный цвет:
+            <img src="../img/2.png" alt='pink'/>
           </p>
         </div>
       </div>
+
     </div>
   </el-main>
 </template>
 <script>
-
+const defaultData = {
+  sizeIndex: '',
+  colorwayIndex: '',
+  value: false,
+}
 export default {
   name: "Favourite",
   data() {
     const data = localStorage.getItem('data_key');
-    return {
-      data: JSON.parse(data),
-    }
-  }
+    const parsed = data ? JSON.parse(data) : defaultData;
+    return parsed;
+  },
 }
 </script>

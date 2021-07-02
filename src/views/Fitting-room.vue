@@ -1,6 +1,6 @@
 <template>
     <el-main class="fitting-room">
-        <iframe width="100%" height="95%" src="https://style.clo-set.com/fitting/u%2F2Cn2ZJ0O1qde2BlKWErg%3D%3D?ui_shopping_bag=0&ui_logo=0" allow="allow-same-origin allow-scripts"></iframe>
+        <iframe width="100%" height="95%" src="https://style.clo-set.com/fitting/u%2F2Cn2ZJ0O1qde2BlKWErg%3D%3D?ui_shopping_bag=0&ui_logo=0&size_idx=1" allow="allow-same-origin allow-scripts"></iframe>
       </el-main>
 </template>
 <script>
@@ -13,15 +13,13 @@
       localStorage.setItem('data_key', JSON.stringify(data));
     }
 
-    const handleDetail = (data) => {
-      console.log(data);
+    const handleDetail = (info) => {
+      console.log(info);
+      localStorage.setItem('info_key', JSON.stringify(info));
     }
     console.log(window.ClosetFittingIframeAPI);
 
-    // eslint-disable-next-line no-undef
-    window.ClosetFittingIframeAPI.addEventListener('kek', handleDetail);
-
-    // eslint-disable-next-line no-undef
+    window.ClosetFittingIframeAPI.addEventListener('createAvatar', handleDetail);
     window.ClosetFittingIframeAPI.addEventListener('clickLike', likeHandler);
   }
 export default {
